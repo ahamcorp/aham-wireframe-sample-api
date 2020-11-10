@@ -21,6 +21,8 @@ const sampleVideoComments = require('./fillerFiles/fillerVideoComments');
 const sampleProsList = require('./fillerFiles/fillerProsList');
 const sampleLoginDatabase = require('./fillerFiles/fillerLoginInfo');
 const sampleOverallTabTrendsData = require('./fillerFiles/fillerOverallTabTrendsData');
+const sampleUserAnalysisInfo = require('./fillerFiles/fillerUserAnalysisInfo');
+const sampleUserAnalysisMatchupList = require('./fillerFiles/fillerUserAnalysisMatchupList');
 
 
 app.get('/sample-pro-matches', (req, res) => {
@@ -87,6 +89,14 @@ app.post('/sample-login', (req, res) => {
         }
     }
     return res.send({status: false});
+});
+
+app.get('/sample-user-analysis', (req, res) => {
+    return res.send(sampleUserAnalysisInfo);
+});
+
+app.get('/user-analysis-matchup-list', (req, res) => {
+    return res.send(sampleUserAnalysisMatchupList);
 });
 
 app.listen(3000);
