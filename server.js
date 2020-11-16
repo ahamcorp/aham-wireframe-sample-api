@@ -23,7 +23,9 @@ const sampleLoginDatabase = require('./fillerFiles/fillerLoginInfo');
 const sampleOverallTabTrendsData = require('./fillerFiles/fillerOverallTabTrendsData');
 const sampleUserAnalysisInfo = require('./fillerFiles/fillerUserAnalysisInfo');
 const sampleUserAnalysisMatchupList = require('./fillerFiles/fillerUserAnalysisMatchupList');
-
+const sampleRuneAnalysis = require('./fillerFiles/fillerRuneAnalysis');
+const sampleLoLDuoSummonerStats = require('./fillerFiles/fillerLoLDuoSummonerStats');
+const sampleCrewInfo = require('./fillerFiles/fillerCrewInfo');
 
 app.get('/sample-pro-matches', (req, res) => {
     return res.send(sampleProMatches.matches);
@@ -98,5 +100,18 @@ app.get('/sample-user-analysis', (req, res) => {
 app.get('/user-analysis-matchup-list', (req, res) => {
     return res.send(sampleUserAnalysisMatchupList);
 });
+
+app.get('/sample-rune-analysis', (req, res) => {
+    return res.send(sampleRuneAnalysis.topRunes);
+});
+
+app.get('/sample-duo-summoner-stats', (req, res) => {
+    return res.send(sampleLoLDuoSummonerStats.duoSummoners);
+});
+
+app.get('/sample-crew-info', (req, res) => {
+    return res.send(sampleCrewInfo);
+});
+
 
 app.listen(3000);
