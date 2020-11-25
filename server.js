@@ -84,7 +84,11 @@ app.post('/sample-login', (req, res) => {
     for (const user of sampleLoginDatabase.users){
         if (user.username===username){
             if (user.password===password){
-                return res.send({validity: true, summonername: user.summonername});
+                return res.send({
+                        validity: true, 
+                        summonername: user.summonername,
+                        id: user.id
+                    });
             } else {
                 break;
             }
